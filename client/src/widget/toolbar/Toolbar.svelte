@@ -19,7 +19,7 @@
 
 <style>
     .toolbar {
-        padding: 0.3rem;
+        padding: 0.3rem 0;
         min-height: 2.3rem;
     }
 </style>

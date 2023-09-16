@@ -37,14 +37,18 @@
     }
 </script>
 
-<div class="field-container text-field flex-cont flex-dir-{labelAlign} {cls}">
-    <label class="field-label" for={cmpId} width={labelWidth}
+<!-- <div class="field-container text-field flex-cont flex-dir-{labelAlign} {cls}"> -->
+<div class="email-container">
+    <!-- <label class="field-label" for={cmpId} width={labelWidth}
         >{label}
         {#if required}
             <span class="req-lbl">*</span>
         {/if}
         {labelSeperator}</label
-    >
+    > -->
+    <span>
+        <i class="fa fa-user" style="color: #1a9b97;"></i>
+    </span>
 
     <input
         id={cmpId}

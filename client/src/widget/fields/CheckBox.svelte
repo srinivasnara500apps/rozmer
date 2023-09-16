@@ -1,3 +1,5 @@
+<svelte:options accessors />
+
 <script context="module">
     let id = -1;
 </script>
@@ -13,9 +15,18 @@
     export let labelSeperator = "";
     export let labelWidth = 100;
     export let value = "";
+    export let cls = "";
+    export let labelAlign = "column"; // top, left
     export let placeholder = "";
+    export let autofocus = false;
 
-    let cmpId = "passfield-" + ++id;
+    let inputEl;
+
+    export function focus() {
+        inputEl.focus();
+    }
+
+    let cmpId = "textfield-" + ++id;
 
     const dispatch = createEventDispatcher();
 
@@ -25,29 +36,23 @@
         }
     }
 </script>
-<div class="email-container margin-top-20">
-<!-- <div class="field-container text-field flex-cont flex-dir-column"> -->
-    <!-- <label class="field-label" for={cmpId} width="{labelWidth}px"
-        >{label}
-        {#if required}
-            <span class="req-lbl">*</span>
-        {/if}
-        {labelSeperator}</label
-    > -->
-    <span>
-        <i class="fa fa-lock" style="color: #1a9b97;"></i>
-    </span>
-    <input
-        type="password"
+
+<div class="">
+    <input type="checkbox" id="rememberme" name="rememberme" class="checkbox" value="true">
+    <label for="rememberme" class="check-label"> {label}</label><br>
+
+    <!-- <input
         id={cmpId}
         {name}
         {required}
-        {placeholder}
         minlength={minLength}
         maxlength={maxLength}
         bind:value
+        {placeholder}
+        {autofocus}
         on:keydown={onkeydown}
-    />
+        bind:this={inputEl}
+    /> -->
 </div>
 
 <style>

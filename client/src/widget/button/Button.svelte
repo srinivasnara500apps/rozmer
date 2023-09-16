@@ -64,7 +64,7 @@
 
 <style>
     .btn-container {
-        padding: 0 8px;
+        /* padding: 0 8px; */
     }
 
     .btn-el {
@@ -81,6 +81,7 @@
         border-radius: 0.25rem;
         box-shadow: 0 0 0.5rem rgb(0 0 0 / 30%);
         cursor: pointer;
+        width: 140px;
     }
 
     .menu-el {

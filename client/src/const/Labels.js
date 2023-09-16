@@ -24,6 +24,7 @@ const Labels = {
     login: {
         login_user: 'Email',
         password: 'Password',
+        remeber: 'Remember me',
         login: 'Login',
         newUser: 'Register as New User',
         forgetPassword: 'Forget Password?',
