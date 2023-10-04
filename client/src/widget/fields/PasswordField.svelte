@@ -24,6 +24,11 @@
             dispatch("enter", value);
         }
     }
+    let showPassword = false;
+
+    function togglePasswordVisibility() {
+        showPassword = !showPassword;
+    }
 </script>
 <div class="email-container margin-top-20">
 <!-- <div class="field-container text-field flex-cont flex-dir-column"> -->
@@ -37,6 +42,19 @@
     <span>
         <i class="fa fa-lock" style="color: #1a9b97;"></i>
     </span>
+    {#if showPassword}
+    <input
+        type="text"
+        id={cmpId}
+        {name}
+        {required}
+        {placeholder}
+        minlength={minLength}
+        maxlength={maxLength}
+        bind:value
+        on:keydown={onkeydown}
+    />
+{:else}
     <input
         type="password"
         id={cmpId}
@@ -48,6 +66,10 @@
         bind:value
         on:keydown={onkeydown}
     />
+{/if}
+    <span>
+        <i class="fa" class:fa-eye={showPassword} class:fa-eye-slash={!showPassword} title="Toggle password visibility" style="color: #1a9b97;" on:click={togglePasswordVisibility}></i>
+    </span>
 </div>
 
 <style>

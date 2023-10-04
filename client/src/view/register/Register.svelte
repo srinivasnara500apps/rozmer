@@ -122,7 +122,7 @@
                 <TextField
                     {required}
                     label={Labels.register.last_name}
-                    placeholder={Labels.register.first_name}
+                    placeholder={Labels.register.last_name}
                     bind:value={lname}
                 />
                 <!-- <TextField

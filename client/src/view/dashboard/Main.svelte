@@ -11,6 +11,7 @@
     import MobileMenu from "./MobileMenu.svelte";
     import Collaborate from "../publish/Collaborate.svelte";
     import MyPosts from "../profile/MyPosts.svelte";
+    import FollowTopics from "../follow/Topics.svelte"
     import Boot from "../../util/Boot";
     import urlConst from "../../const/Url";
     import Request from "../../util/Request";
@@ -167,19 +168,29 @@
 </script>
 
 <svelte:window on:resize={onViewResize} />
-<MainHeader {showLogout} {showSearch} on:searchpost={onSearchPost}/>
+<MainHeader on:showview={onActivateView} {selected} {showLogout} {showSearch} on:searchpost={onSearchPost}/>
 
+<div class="flex-cont plr-2 margin-top-20">
 <div
-    class="flex-cont wh-100-percent"
+    class="flex-cont w-70-percent h-100-percent"
     bind:this={wrapperEl}
     class:flex-dir-column={!Boot.isDesktop()}
     class:flex-mobile={!Boot.isDesktop()}
 >
-    {#if showSideMenu}
+    <!-- {#if showSideMenu}
         <SideMenu on:showview={onActivateView} {selected} />
-    {/if}
+    {/if} -->
 
     <svelte:component this={activeView} bind:this={activeViewRef} />
+</div>
+<div
+    class="flex-cont w-30-percent h-100-percent"
+    bind:this={wrapperEl}
+    class:flex-dir-column={!Boot.isDesktop()}
+    class:flex-mobile={!Boot.isDesktop()}
+>
+    <FollowTopics />
+</div>
 </div>
 {#if !Boot.isDesktop()}
     <MobileMenu on:showview={onActivateView} {selected} />

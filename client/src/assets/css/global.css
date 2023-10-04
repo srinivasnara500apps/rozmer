@@ -20,7 +20,9 @@ body {
 .theme-bg {
     background-color: var(--primary-color-alternate-2);
 }
-
+.theme-border-bottom{
+    border-bottom: 5px solid var(--primary-color-alternate-2);
+}
 .title {
     color: var(--white-color);
 }
@@ -69,10 +71,58 @@ body {
     padding: 0.5rem 1rem 0.5rem 0;
 }
 
+.font16{
+    font-size: 14px;
+    line-height: 16px;
+}
 .flex-cont {
     display: flex;
 }
-
+.m-auto{
+    margin: auto;
+}
+.mx-auto{
+    margin: 0 auto;
+}
+.mr-2{
+    margin-right: 0.2rem;
+}
+.mr-10{
+    margin-right: 1rem;
+}
+.ml-10{
+    margin-left: 1rem;
+}
+.mt-10{
+    margin-top: 10px;
+}
+.mt-20{
+    margin-top: 20px;
+}
+.mb-10{
+    margin-bottom: 10px;
+}
+.mb-20{
+    margin-bottom: 20px;
+}
+.border-b-1{
+    border-bottom: 2px dotted #8f8e8e;
+}
+.border-b-2{
+    border-bottom: 2px dotted white;
+}
+.border-b-3{
+    border-bottom: 1px solid #8f8e8e;
+}
+.shadow-nav{
+    box-shadow: 0 6px 40px #8f8e8e;
+}
+.standard-bg{
+    background-color: #1a9b97;
+}
+.border-radius-10{
+    border-radius: 10px;
+}
 .flex-1 {
     flex: 1;
 }
@@ -126,12 +176,34 @@ body {
 .w-100-percent {
     width: 100%;
 }
-
+.w-30-percent {
+    width: 30%;
+}
+.w-70-percent {
+    width: 70%;
+    /* overflow-y: auto; */
+}
+.h-100-percent {
+    height: 80vh;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.virtual-list-wrapper::-webkit-scrollbar , .myfeed-cont::-webkit-scrollbar {
+    display: none !important;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .virtual-list-wrapper, .myfeed-cont {
+    -ms-overflow-style: none !important;  /* IE and Edge */
+    scrollbar-width: none !important;  /* Firefox */
+  }
 .shadow {
     border-radius: 48px;
     background: var(--white-color);
     box-shadow: rgb(170, 170, 170) 23px 23px 46px 0px,
         rgb(255, 255, 255) -23px -23px 46px 0px;
+}
+.p1{
+    padding: 1rem;
 }
 .p2{
     padding: 2rem;
@@ -147,7 +219,15 @@ body {
 .pl-1 {
     padding-left: 0.6rem;
 }
-
+.plr-2{
+    padding: 1rem 2rem;
+}
+.ptb-1{
+    padding: 1rem 0;
+}
+.pointer{
+    cursor: pointer;
+}
 .text-right{
     text-align: end;
 }
@@ -204,12 +284,12 @@ body {
 }
 
 .menu-selected {
-    background-color: var(--nav-menu-selected-bg);
-    color: var(--blue-shade-2);
+    /* background-color: var(--nav-menu-selected-bg); */
+    color: var(--standard-color);
 }
 
 .menu-selected .menu-item-icon {
-    color: var(--blue-shade-2) !important;
+    color: var(--standard-color) !important;
 }
 
 .bg-gradient {
@@ -285,7 +365,7 @@ body {
     margin-bottom: 30px;
 }
 .header-logo {
-    width: 7rem;
+    width: 8rem;
 }
 
 .msg-body .msg-body-inner {
@@ -358,12 +438,12 @@ body {
 
 /* Global css for feed design which utlises in FeedList and MyPosts */
 .virtual-list-item {
-    background: var(--nav-menu-selected-bg) none repeat scroll 0 0;
+    background: var(--blue-shade-1) none repeat scroll 0 0;
     border: 1px solid var(--list-item-border);
-    border-radius: 5px;
-    height: 92%;
+    border-radius: 10px;
+    /* height: 92%; */
     margin: 0.4rem auto;
-    padding: 0 2% 2% 2%;
+    padding: 1% 2%;
 }
 
 .feed-info {
@@ -390,17 +470,18 @@ body {
 .author-name {
     float: left;
     font-weight: 500;
-    width: 100%;
+    /* width: 100%; */
     font-size: 14.5px;
     text-decoration: none;
 }
 
 .published-details {
-    color: var(--nav-icon-color);
+    color: black;
+    font-weight: 800;
     float: left;
-    font-size: 12px;
+    font-size: 14.5px;
     text-transform: capitalize;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .feed-thumbnail {
@@ -430,6 +511,7 @@ body {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    text-transform: capitalize;
 }
 
 .overflow-y {
@@ -702,7 +784,7 @@ input[type=number]::-webkit-outer-spin-button {
     color: #FFFFFF;
     cursor: pointer;
     position: absolute;
-    top: 64px;
+    top: 150px;
     font-size: 34px;
     z-index: 1;
     background-color: var(--primary-color-alternate-2);
@@ -736,7 +818,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
     .virtual-list-item-body {
-        max-width: 94% !important;
+        /* max-width: 94% !important; */
         padding: 0 3%;
     }
 
